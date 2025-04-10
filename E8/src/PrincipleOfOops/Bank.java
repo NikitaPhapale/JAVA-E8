@@ -84,16 +84,20 @@ public class Bank {
 		{
 			if(amt>0)
 			{
-				if(balance>amt)
+				if(balance>=amt)
 				{
 					balance-=amt;
 					System.out.println("Amount debited");
+				}
+				else
+				{
+					System.out.println("Insuffientient balance");
 				}
 			
 			}
 			else
 			{
-				System.out.println("Insuffientient balance");
+				System.out.println("Invalid amount");
 			}
 			
 		}
