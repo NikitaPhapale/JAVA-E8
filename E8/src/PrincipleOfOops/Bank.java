@@ -7,14 +7,20 @@ public class Bank {
 	private String ifsc;
 	private int pin;
 	private double balance;
+	private long phno;
+	private long addharno;
+//	UPI upi;
 	
-	Bank(String bankName,String username,long accNo,String ifsc,int pin)
+	Bank(String bankName,String username,long accNo,String ifsc,int pin,long phno,long addharno)
 	{
 		this.bankName=bankName;
 		this.accNo=accNo;
 		userName=username;
 		this.ifsc=ifsc;
 		this.pin=pin;
+		this.phno=phno;
+		this.addharno=addharno;
+		System.out.println("Bank Account Created!");;
 	}
 	public String getBankName()
 	{
@@ -31,6 +37,10 @@ public class Bank {
 	public String getIfsc()
 	{
 		return ifsc;
+	}
+	public int getPin()
+	{
+		return pin;
 	}
 	public void setPin(long accNo,int oldPin ,int newPin)
 	{
@@ -106,5 +116,44 @@ public class Bank {
 			System.out.println("Invalid credentials");
 		}
 	}
+	public long getphno()
+	{
+		return phno;
+	}
+	public void setphno(long addharno,long newPhno)
+	{
+		if(this.addharno==addharno)
+		{
+			phno=newPhno;
+			System.out.println("Phone number changed!");
+		}
+		else
+		{
+			System.out.println("Invalid Addhar");
+		}
+	}
+	public long getAddhar()
+	{
+		return addharno;
+	}
 	
+	public void displayBank()
+	{
+		
+		System.out.println("Bank Name:"+bankName);
+		System.out.println("Username:"+userName);
+		System.out.println("account number:"+accNo);
+		System.out.println("ifsc:"+ifsc);
+		System.out.println("bank pin:"+pin);
+		System.out.println("balance:"+balance);
+		System.out.println("phno:"+phno);
+		System.out.println("addhar:"+addharno);
+		System.out.println("_____________");
+	}
+	
+//	public void registerUpi(String upiId,int upiPin) {
+//		upi=new UPI(upiId,upiPin,bankName,pin,phno,this);
+//		System.out.println("UPI account created");
+//		
+//	}
 }
